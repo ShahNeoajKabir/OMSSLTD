@@ -1,0 +1,573 @@
+/* --- VARIABLES --- */
+$primary: #0A1F44;     
+$accent: #F7941D;      
+$light-bg: #f8fafc;    
+$white: #ffffff;
+$text-dark: #1e293b;
+$text-muted: #64748b;
+$transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+/* --- GLOBAL STYLES --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $white;
+  color: $text-dark;
+  line-height: 1.6;
+  overflow-x: hidden; // Horizontal scroll রোধ করার জন্য
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* --- LOADER --- */
+.loader {
+  position: fixed;
+  inset: 0;
+  background: $primary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  .spinner {
+    width: 50px; height: 50px;
+    border: 4px solid rgba($white, 0.1);
+    border-top: 4px solid $accent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+}
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+/* --- NAVBAR --- */
+.navbar {
+  position: fixed;
+  top: 0; width: 100%;
+  background: $primary;
+  padding: 15px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: $white;
+    span { color: $accent; }
+  }
+
+  nav {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    transition: $transition;
+
+    a {
+      text-decoration: none;
+      color: rgba($white, 0.85);
+      font-weight: 500;
+      font-size: 15px;
+      transition: $transition;
+      &:hover, &.active-link { color: $accent; }
+    }
+
+    .nav-btn {
+      background: $accent;
+      color: $white;
+      padding: 10px 22px;
+      border-radius: 5px;
+      &:hover { background: darken($accent, 8%); transform: translateY(-2px); }
+    }
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    span { width: 28px; height: 3px; background: $white; border-radius: 2px; }
+  }
+}
+
+/* --- HERO SECTION --- */
+/* --- HERO SECTION MODIFIED FOR CLEAR VIDEO --- */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  background: #000;
+
+  .hero-video {
+    position: absolute;
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9; // ← অপাসিটি ০.৬ থেকে বাড়িয়ে ০.৯ করা হয়েছে ভিডিও ক্লিয়ার করার জন্য
+    z-index: 0;
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    // গ্রাডিয়েন্ট হালকা করা হয়েছে যাতে ভিডিওর ডিটেইল দেখা যায়
+    background: linear-gradient(
+      180deg, 
+      rgba($primary, 0.6) 0%, 
+      rgba($primary, 0.2) 50%, 
+      rgba($primary, 0.7) 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+
+    .hero-content {
+      max-width: 900px;
+      padding: 0 20px;
+      color: $white;
+      text-align: center;
+      // টেক্সট যাতে ভিডিওর ওপর ফুটে ওঠে তাই হালকা শ্যাডো যোগ করা হয়েছে
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+
+      .badge {
+        background: $accent; // ট্রান্সপারেন্ট না রেখে সলিড করা হয়েছে
+        color: $white;
+        padding: 6px 16px;
+        border-radius: 50px;
+        font-size: 12px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        display: inline-block;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      }
+
+      h1 {
+        font-size: clamp(2.2rem, 8vw, 3.8rem);
+        line-height: 1.1;
+        margin-bottom: 20px;
+        font-weight: 800;
+        span { color: $accent; }
+      }
+
+      p {
+        font-size: clamp(1rem, 4vw, 1.25rem);
+        opacity: 1; // প্যারাগ্রাফ ক্লিয়ার করা হয়েছে
+        margin-bottom: 35px;
+        max-width: 700px;
+        margin-inline: auto;
+        font-weight: 500;
+      }
+
+      .hero-btns {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn-primary {
+        background: $accent; 
+        color: $white;
+        padding: 16px 35px; 
+        border-radius: 5px;
+        text-decoration: none; 
+        font-weight: 700;
+        border: none;
+        transition: $transition;
+        &:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba($accent, 0.4); }
+      }
+
+      .btn-outline {
+        border: 2px solid $white; 
+        color: $white;
+        padding: 14px 35px; 
+        border-radius: 5px;
+        text-decoration: none; 
+        font-weight: 700;
+        background: rgba(255, 255, 255, 0.1); // হালকা ব্যাকগ্রাউন্ড দেওয়া হয়েছে
+        backdrop-filter: blur(5px); // গ্লাস ইফেক্ট
+        transition: $transition;
+        &:hover { background: $white; color: $primary; }
+      }
+    }
+  }
+}
+/* --- UNIVERSAL CARD HOVER --- */
+.why-card, .award-premium-card, .obj-card {
+  background: $white;
+  border-radius: 15px;
+  transition: $transition;
+  border: 1px solid rgba(0,0,0,0.05);
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba($primary, 0.12);
+    border-color: rgba($accent, 0.3);
+    &::after { width: 100%; }
+    i { transform: rotateY(180deg); color: $accent; }
+  }
+
+  &::after {
+    content: ""; position: absolute; bottom: 0; left: 0;
+    width: 0; height: 4px;
+    background: linear-gradient(90deg, $accent, #ffbc6e);
+    transition: width 0.4s ease;
+  }
+}
+
+/* --- OVERVIEW --- */
+.overview {
+  padding: 80px 0;
+  .overview-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px; align-items: center;
+    margin-bottom: 80px;
+
+    .overview-text {
+      h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); color: $primary; margin-bottom: 20px; }
+      p { color: $text-muted; margin-bottom: 15px; }
+    }
+    .overview-image img {
+      width: 100%; border-radius: 15px;
+      box-shadow: 20px 20px 0px $light-bg;
+    }
+  }
+  .why-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;
+    .why-card {
+      padding: 40px 30px;
+      i { font-size: 40px; color: $accent; margin-bottom: 20px; display: block; transition: 0.5s; }
+      h3 { color: $primary; margin-bottom: 10px; }
+      p { font-size: 14px; color: $text-muted; }
+    }
+  }
+}
+
+/* --- VISION & MISSION --- */
+.vision-mission {
+  padding: 80px 0; background: $light-bg;
+  .vm-wrapper {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;
+    .vm-card {
+      background: $white; padding: 40px; border-left: 5px solid $accent; border-radius: 10px;
+      h3 { color: $primary; margin-bottom: 10px; }
+      p { color: $text-muted; }
+    }
+  }
+}
+
+/* --- AWARDS --- */
+.awards-premium {
+  padding: 80px 0;
+  .section-header-center { text-align: center; margin-bottom: 50px; h1 { font-size: 2.5rem; color: $primary; } }
+  .awards-premium-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;
+    .award-premium-card {
+      padding: 30px; display: flex; gap: 20px;
+      .award-icon { font-size: 30px; color: $accent; }
+      .award-info h3 { font-size: 18px; margin-bottom: 5px; }
+      .award-year { color: $accent; font-weight: 700; font-size: 12px; border: 1px solid $accent; padding: 2px 10px; border-radius: 20px; }
+    }
+  }
+}
+
+/* --- CORE BUSINESS --- */
+.core-business {
+  padding: 80px 0;
+   .section-header-center { text-align: center; margin-bottom: 50px; h1 { font-size: 2.5rem; color: $primary; } }
+  .objective-grid {
+     display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;
+    .obj-card {
+      .obj-img { height: 200px; overflow: hidden; img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; } }
+      .obj-content { padding: 25px; h3 { color: $primary; font-size: 18px; } }
+      &:hover .obj-img img { transform: scale(1.1); }
+    }
+  }
+}
+
+/* --- PREMIUM CONTACT SECTION --- */
+.contact-us {
+  padding: 100px 0;
+  background: $light-bg;
+
+  .contact-card-premium {
+    background: $primary;
+    border-radius: 30px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba($primary, 0.2);
+    position: relative;
+
+    // Background Decorative Element
+    &::before {
+      content: "";
+      position: absolute;
+      top: -50px; right: -50px;
+      width: 200px; height: 200px;
+      background: rgba($accent, 0.1);
+      border-radius: 50%;
+    }
+
+    .contact-content {
+      padding: 60px;
+      color: $white;
+
+      .badge {
+        color: $accent;
+        text-transform: uppercase;
+        font-weight: 800;
+        font-size: 13px;
+        letter-spacing: 2px;
+        margin-bottom: 15px;
+        display: block;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 5vw, 3rem);
+        line-height: 1.2;
+        margin-bottom: 20px;
+        span { color: $accent; }
+      }
+
+      p { opacity: 0.8; margin-bottom: 40px; max-width: 500px; }
+
+      .contact-methods {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .method-item {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          text-decoration: none;
+          color: $white;
+          transition: $transition;
+          padding: 15px;
+          border-radius: 12px;
+          background: rgba($white, 0.05);
+          width: fit-content;
+
+          .icon-box {
+            width: 50px; height: 50px;
+            background: $accent;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 10px;
+            font-size: 20px;
+            color: $white;
+          }
+
+          .method-details {
+            span { display: block; font-size: 12px; opacity: 0.7; }
+            strong { font-size: 16px; transition: $transition; }
+          }
+
+          &:hover {
+            background: rgba($white, 0.1);
+            transform: translateX(10px);
+            .method-details strong { color: $accent; }
+          }
+        }
+      }
+    }
+
+    .contact-action-box {
+      background: rgba($white, 0.03);
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border-left: 1px solid rgba($white, 0.1);
+      color: $white;
+
+      h3 { font-size: 24px; margin-bottom: 15px; }
+      p { opacity: 0.7; font-size: 14px; margin-bottom: 30px; }
+
+      .social-links-premium {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 40px;
+
+        .social-circle {
+          width: 50px; height: 50px;
+          border: 1px solid rgba($white, 0.2);
+          border-radius: 50%;
+          display: flex; align-items: center; justify-content: center;
+          color: $white;
+          text-decoration: none;
+          transition: $transition;
+
+          &:hover {
+            background: $accent;
+            border-color: $accent;
+            transform: translateY(-5px);
+          }
+        }
+      }
+
+      .btn-primary-glow {
+        background: $accent;
+        color: $white;
+        padding: 18px 40px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 700;
+        box-shadow: 0 10px 20px rgba($accent, 0.3);
+        transition: $transition;
+
+        &:hover {
+          transform: scale(1.05);
+          box-shadow: 0 15px 30px rgba($accent, 0.5);
+        }
+      }
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .contact-us .contact-card-premium {
+    grid-template-columns: 1fr;
+    .contact-action-box {
+      border-left: none;
+      border-top: 1px solid rgba($white, 0.1);
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .contact-us .contact-card-premium .contact-content {
+    padding: 30px 20px;
+  }
+  .contact-us .contact-card-premium .contact-action-box {
+    padding: 40px 20px;
+  }
+}
+
+/* --- WHATSAPP & FOOTER --- */
+.whatsapp {
+  position: fixed; bottom: 25px; right: 25px; background: #25D366;
+  width: 60px; height: 60px; border-radius: 50%; display: flex;
+  justify-content: center; align-items: center; color: white; font-size: 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 1000; text-decoration: none;
+}
+footer { background: #051126; color: rgba(255,255,255,0.5); padding: 30px; text-align: center; font-size: 14px; }
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+    nav {
+      position: absolute; top: 100%; left: 0; width: 100%;
+      background: $primary; flex-direction: column; gap: 0;
+      max-height: 0; overflow: hidden; // Hamburger এর জন্য
+      &.active { max-height: 500px; border-top: 1px solid rgba(255,255,255,0.1); }
+      a { width: 100%; padding: 15px 25px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+      .nav-btn { margin: 15px; text-align: center; }
+    }
+    .hamburger { display: flex; }
+  }
+
+  .hero .hero-content {
+    h1 { font-size: 2.2rem; }
+    p { font-size: 1rem; }
+    .hero-btns { flex-direction: column; width: 100%; .btn-primary, .btn-outline { width: 100%; margin-left: 0; } }
+  }
+
+  .contact-box { text-align: center; justify-content: center; }
+}
+
+@media (max-width: 480px) {
+  .hero .hero-content h1 { font-size: 1.8rem; }
+  .overview .overview-grid .overview-image img { box-shadow: 10px 10px 0px $light-bg; }
+}
+
+/* --- GALLERY SECTION --- */
+.gallery-section {
+  padding: 80px 0;
+   .section-header-center { text-align: center; margin-bottom: 50px; h1 { font-size: 2.5rem; color: $primary; } }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  .gallery-item {
+    position: relative;
+    height: 250px;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba($primary, 0.9), transparent);
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+      opacity: 0;
+      transition: $transition;
+
+      span {
+        color: $white;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transform: translateY(20px);
+        transition: $transition;
+      }
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.1);
+      }
+      .gallery-overlay {
+        opacity: 1;
+        span {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}
+
+/* Responsive for Gallery */
+@media (max-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.gradient-hr {
+  border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(247, 148, 29, 0), #F7941D, rgba(247, 148, 29, 0));
+    margin: 40px 0;
+  }

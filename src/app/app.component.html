@@ -1,0 +1,384 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<div class="loader" *ngIf="loading">
+  <div class="spinner"></div>
+</div>
+
+<header class="navbar" [class.scrolled]="isScrolled">
+  <div class="logo">OMSS <span>LTD</span></div>
+
+  <div class="hamburger" (click)="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav [class.active]="menuOpen">
+    <a href="#overview" (click)="setActive('overview'); closeMenu()" [class.active-link]="activeSection==='overview'">Overview</a>
+    <a href="#vision-mission" (click)="setActive('vision-mission'); closeMenu()" [class.active-link]="activeSection==='vision-mission'">Vision</a>
+    <a href="#award" (click)="setActive('award'); closeMenu()" [class.active-link]="activeSection==='award'">Awards</a>
+    <a href="#coreBusiness" (click)="setActive('coreBusiness'); closeMenu()" [class.active-link]="activeSection==='coreBusiness'">Services</a>
+    <a href="#gallery" (click)="setActive('gallery'); closeMenu()" [class.active-link]="activeSection==='gallery'">Gallery</a>
+    <a href="#partner" (click)="setActive('gallery'); closeMenu()" [class.active-link]="activeSection==='gallery'">Partner</a>
+    <a href="assets/pdfbrochure/Brochure.pdf" 
+   download="OMSS_Limited_Brochure" (click)="setActive('brochure'); closeMenu()" [class.active-link]="activeSection==='brochure'">Brochure</a>
+    <a href="#contact" (click)="setActive('contact'); closeMenu()" [class.active-link]="activeSection==='contact'" class="nav-btn">Contact Us</a>
+  </nav>
+</header>
+
+<section id="home" class="hero">
+<video #heroVideo autoplay muted loop playsinline class="hero-video">
+  <source src="assets/OMSS_Limited_ভিডিও_তৈরি_ও_প্রচার.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+  <div class="overlay">
+    <div class="hero-content">
+      <span class="badge">Your Trusted Engineering Partner</span>
+      <h1>Operational <br> Maintenance <span>Service & Solutions</span></h1>
+      <p>Leading Bangladesh's Power Sector with Excellence and Innovation.</p>
+      
+      <div class="hero-btns">
+        <a href="#services" class="btn-primary">Our Services</a>
+        <a href="#contact" class="btn-outline">Get in Touch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="overview" class="overview">
+  <div class="container">
+    <div class="overview-grid">
+      <div class="overview-text">
+        <h2 class="section-tag">About Us</h2>
+        <h1>Reliable Partner for <span>Power Solutions</span></h1>
+        <p>Established in 2022, OMSS Limited has quickly evolved into a trusted partner for independent power producers (IPPs) and government utilities in Bangladesh.</p>
+        <div class="stats">
+            <div class="stat-item"><strong>24/7</strong> Support</div>
+            <div class="stat-item"><strong>ISO</strong> Certified</div>
+        </div>
+      </div>
+      <div class="overview-image">
+        <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800" alt="Power Plant">
+      </div>
+    </div>
+
+    <div class="why-choose">
+        <div class="section-title">
+            <h2>Why Choose Us?</h2>
+        </div>
+        <div class="why-grid">
+            <div class="why-card">
+              <i class="fas fa-user-gear"></i>
+              <h3>Expert Team</h3>
+              <p>Experienced engineers & certified technicians working around the clock.</p>
+            </div>
+            <div class="why-card">
+              <i class="fas fa-microchip"></i>
+              <h3>Modern Technology</h3>
+              <p>Digital monitoring & predictive maintenance for maximum efficiency.</p>
+            </div>
+            <div class="why-card">
+              <i class="fas fa-shield-halved"></i>
+              <h3>Quality & HSE</h3>
+              <p>ISO compliant processes with the highest safety standards.</p>
+            </div>
+            <div class="why-card">
+              <i class="fas fa-handshake"></i>
+              <h3>Reliable Partner</h3>
+              <p>Long-term partnerships with leading IPPs across the nation.</p>
+            </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section id="vision-mission" class="vision-mission">
+  <div class="container">
+    <div class="vm-wrapper">
+      <div class="vm-card vision">
+        <div class="vm-icon">🌍</div>
+        <h3>Our Vision</h3>
+        <p>To be the most trusted partner in the power generation services sector in Bangladesh and expand regionally.</p>
+        
+      </div>
+      <div class="vm-card mission">
+        <div class="vm-icon">🎯</div>
+        <h3>Our Mission</h3>
+        <p>Deliver excellence in power plant operations through safety, reliability, and innovation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="award" class="awards-premium">
+  <div class="container">
+    <div class="section-header-center">
+      <span class="badge-dark">Excellence Defined</span>
+      <h1>Awards & <span>Recognitions</span></h1>
+      <p>Our commitment to safety and quality has earned us industry-leading accolades.</p>
+      <hr class="gradient-hr">
+    </div>
+    
+    <div class="awards-premium-grid">
+      <div class="award-premium-card">
+        <div class="award-icon">
+          <i class="fas fa-trophy"></i>
+        </div>
+        <div class="award-info">
+          <h3>Safety Excellence Award</h3>
+          <p>Recognized for maintaining zero-incident safety records across all major power plant projects in Bangladesh.</p>
+          <span class="award-year">2024</span>
+        </div>
+      </div>
+
+      <div class="award-premium-card">
+        <div class="award-icon">
+          <i class="fas fa-gears"></i>
+        </div>
+        <div class="award-info">
+          <h3>Operational Benchmark</h3>
+          <p>Awarded for completing critical turbine overhauls 15% ahead of schedule with 100% availability.</p>
+          <span class="award-year">2023</span>
+        </div>
+      </div>
+
+      <div class="award-premium-card">
+        <div class="award-icon">
+          <i class="fas fa-award"></i>
+        </div>
+        <div class="award-info">
+          <h3>Global Quality Appreciation</h3>
+          <p>Acknowledged by International OEM partners for strict compliance with global maintenance standards.</p>
+          <span class="award-year">2025</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="coreBusiness" class="core-business">
+  <div class="container">
+    <div class="section-header-center">
+        <h1>Core Business Areas</h1>
+        <p>Comprehensive solutions for the power industry</p>
+        <hr class="gradient-hr">
+    </div>
+    <div class="objective-grid">
+      <div class="obj-card">
+        <div class="obj-img"><img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=500" alt="Operation"></div>
+        <div class="obj-content">
+            <h3>Operation of Power Plants</h3>
+            <p>Efficient and reliable plant operations ensuring uninterrupted supply.</p>
+        </div>
+      </div>
+      <div class="obj-card">
+        <div class="obj-img"><img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=500" alt="Maintenance"></div>
+        <div class="obj-content">
+            <h3>Strategic Maintenance</h3>
+            <p>Minimizing downtime through preventive & corrective planning.</p>
+        </div>
+      </div>
+      <div class="obj-card">
+        <div class="obj-img"><img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=500" alt="Overhaul"></div>
+        <div class="obj-content">
+            <h3>Equipment Overhauling</h3>
+            <p>Precision turbine and equipment overhaul with global standards.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="gallery-section">
+  <div class="container">
+    <div class="section-header-center">
+      <span class="badge-dark">Our Portfolio</span>
+      <h1>Project <span>Showcase</span></h1>
+      <p>Visual highlights of our operational excellence and technical expertise.</p>
+      <hr class="gradient-hr">
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item" [@fadeUp]>
+        <img src="assets/imagecompany/11.jpeg" alt="Engineering Team">
+        <div class="gallery-overlay">
+          <span>On-site Inspection</span>
+        </div>
+      </div>
+      <div class="gallery-item" [@fadeUp]>
+        <img src="assets/imagecompany/2.jpeg" alt="Power Plant Maintenance">
+        <div class="gallery-overlay">
+          <span>Turbine Overhaul</span>
+        </div>
+      </div>
+      
+      <div class="gallery-item" [@fadeUp]>
+        <img src="assets/imagecompany/3.jpeg" alt="Engineering Team">
+        <div class="gallery-overlay">
+          <span>On-site Inspection</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" [@fadeUp]>
+        <img src="assets/imagecompany/4.jpeg" alt="Control Room">
+        <div class="gallery-overlay">
+          <span>Digital Monitoring</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" [@fadeUp]>
+        <img src="assets/imagecompany/5.jpeg" alt="Safety Drill">
+        <div class="gallery-overlay">
+          <span>Safety Standards</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" [@fadeUp]>
+        <img src="assets/imagecompany/6.jpeg" alt="Equipment Maintenance">
+        <div class="gallery-overlay">
+          <span>Preventive Care</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" [@fadeUp]>
+        <img src="assets/imagecompany/7.jpeg" alt="Operational Excellence">
+        <div class="gallery-overlay">
+          <span>Operational Excellence</span>
+        </div>
+      </div>
+      <div class="gallery-item" [@fadeUp]>
+        <img src="assets/imagecompany/8.jpeg" alt="Operational Excellence">
+        <div class="gallery-overlay">
+          <span>Operational Excellence</span>
+        </div>
+      </div>
+      <div class="gallery-item" [@fadeUp]>
+        <img src="assets/imagecompany/9.jpeg" alt="Operational Excellence">
+        <div class="gallery-overlay">
+          <span>Operational Excellence</span>
+        </div>
+      </div>
+      <div class="gallery-item" [@fadeUp]>
+        <img src="assets/imagecompany/10.jpeg" alt="Operational Excellence">
+        <div class="gallery-overlay">
+          <span>Operational Excellence</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="partner" class="gallery-section">
+  <div class="container">
+    <div class="section-header-center">
+      <h1>Strategic <span>Partnerships</span></h1>
+      <p>We collaborate with industry leaders to deliver excellence and innovation. Our partners share our commitment to quality and help us provide the best solutions for our clients.</p>
+      <hr class="gradient-hr">
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item" [@fadeUp]>
+        <img src="assets/imagecompany/imagesmastir.png" alt="Power Plant Maintenance">
+        <div class="gallery-overlay">
+          <span>MASTIR</span>
+        </div>
+      </div>
+      
+      <div class="gallery-item" [@fadeUp]>
+        <img src="assets/imagecompany/waterwell.jpeg" alt="Engineering Team">
+        <div class="gallery-overlay">
+          <span>WaterWell Engineering</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" [@fadeUp]>
+        <img src="assets/imagecompany/MESDN.jpeg" alt="Control Room">
+        <div class="gallery-overlay">
+          <span>wira M&E SDN Bhd</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact-us">
+  <div class="container">
+    <div class="contact-card-premium">
+      <div class="contact-content">
+        <span class="badge">Get In Touch</span>
+        <h1>Ready to power up <br> <span>your project?</span></h1>
+        <p>Whether it's a routine checkup or an emergency overhaul, our expert engineers are standing by 24/7.</p>
+        
+        <div class="contact-methods">
+          <a href="mailto:info@omssbd.com" class="method-item">
+            <div class="icon-box"><i class="fas fa-envelope"></i></div>
+            <div class="method-details">
+              <span>Email Us</span>
+              <strong>info@omssbd.com</strong>
+            </div>
+          </a>
+
+          <a href="tel:+8801742987866" class="method-item">
+            <div class="icon-box"><i class="fas fa-phone-alt"></i></div>
+            <div class="method-details">
+              <span>Call Anytime</span>
+              <strong>+880 1742 987 866</strong>
+            </div>
+          </a>
+          
+          <a href="tel:+8801913749618" class="method-item">
+            <div class="icon-box"><i class="fas fa-phone-alt"></i></div>
+            <div class="method-details">
+              <span>Call Anytime</span>
+              <strong>+880 1913 749 618</strong>
+            </div>
+          </a>
+          <a href="tel:+8801731663745" class="method-item">
+            <div class="icon-box"><i class="fas fa-phone-alt"></i></div>
+            <div class="method-details">
+              <span>Call Anytime</span>
+              <strong>++880 1731 663 745</strong>
+            </div>
+          </a>
+          
+        </div>
+      </div>
+
+      <div class="contact-action-box">
+        <h3>Our Offices</h3>
+        
+        <div class="method-item" style="text-align: left; margin-bottom: 20px;">
+          <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="method-details">
+            <span style="display: block; font-size: 0.9rem; opacity: 0.8;">Bangladesh Office</span>
+            <strong style="display: block; font-size: 1rem;">House # 50, Road # 10 North Bashabo, <br> Sabujbag Dhaka- 1214</strong>
+          </div>
+        </div>
+
+        <!-- <div class="method-item" style="text-align: left; margin-bottom: 25px;">
+          <div class="icon-box"><i class="fas fa-globe"></i></div>
+          <div class="method-details">
+            <span style="display: block; font-size: 0.9rem; opacity: 0.8;">Global Office (Singapore)</span>
+            <strong style="display: block; font-size: 1rem;">11 Woodlands Close #09-38 Room-A, <br> Woodlands 11, Singapore 737853</strong>
+          </div>
+        </div> -->
+
+        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin-bottom: 20px;">
+        
+        <p>Stay updated with our latest projects and safety achievements.</p>
+        <div class="social-links-premium">
+          <a href="#" class="social-circle"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-circle"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://wa.me/8801742987866" class="social-circle"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <a href="mailto:info@omssbd.com" class="btn-primary-glow">Send Inquiry Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<a href="https://wa.me/8801742987866" target="_blank" class="whatsapp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<footer>
+    <p>© 2026 OMSS LTD | All Rights Reserved</p>
+</footer>
