@@ -5,7 +5,7 @@
 </div>
 
 <header class="navbar" [class.scrolled]="isScrolled">
-  <div class="logo">OMSS <span>LTD</span></div>
+  <div class="logo" >OMSS <span>LTD</span></div>
 
   <div class="hamburger" (click)="toggleMenu()">
     <span></span>
@@ -14,12 +14,18 @@
   </div>
 
   <nav [class.active]="menuOpen">
+    <a href="#home" (click)="setActive('home'); closeMenu()" [class.active-link]="activeSection==='home'">Home</a>
     <a href="#overview" (click)="setActive('overview'); closeMenu()" [class.active-link]="activeSection==='overview'">Overview</a>
+
     <a href="#vision-mission" (click)="setActive('vision-mission'); closeMenu()" [class.active-link]="activeSection==='vision-mission'">Vision</a>
     <a href="#award" (click)="setActive('award'); closeMenu()" [class.active-link]="activeSection==='award'">Awards</a>
-    <a href="#coreBusiness" (click)="setActive('coreBusiness'); closeMenu()" [class.active-link]="activeSection==='coreBusiness'">Services</a>
+    <a href="#growth" (click)="setActive('growth'); closeMenu()" [class.active-link]="activeSection==='growth'">Financial Growth</a>
+    <a href="#coreBusiness" (click)="setActive('coreBusiness'); closeMenu()" [class.active-link]="activeSection==='coreBusiness'">Core Business</a>
+    <a href="#service" (click)="setActive('service'); closeMenu()" [class.active-link]="activeSection==='service'">Services</a>
+    <a href="#org-structure" (click)="setActive('org-structure'); closeMenu()" [class.active-link]="activeSection==='org-structure'">Org.Structure </a>
+    <a href="#partner" (click)="setActive('partner'); closeMenu()" [class.active-link]="activeSection==='partner'">Partner</a>
     <a href="#gallery" (click)="setActive('gallery'); closeMenu()" [class.active-link]="activeSection==='gallery'">Gallery</a>
-    <a href="#partner" (click)="setActive('gallery'); closeMenu()" [class.active-link]="activeSection==='gallery'">Partner</a>
+
     <a href="assets/pdfbrochure/Brochure.pdf" 
    download="OMSS_Limited_Brochure" (click)="setActive('brochure'); closeMenu()" [class.active-link]="activeSection==='brochure'">Brochure</a>
     <a href="#contact" (click)="setActive('contact'); closeMenu()" [class.active-link]="activeSection==='contact'" class="nav-btn">Contact Us</a>
@@ -28,7 +34,7 @@
 
 <section id="home" class="hero">
 <video #heroVideo autoplay muted loop playsinline class="hero-video">
-  <source src="assets/OMSS_Limited_ভিডিও_তৈরি_ও_প্রচার.mp4" type="video/mp4">
+  <source src="assets/video1.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -36,10 +42,10 @@
     <div class="hero-content">
       <span class="badge">Your Trusted Engineering Partner</span>
       <h1>Operational <br> Maintenance <span>Service & Solutions</span></h1>
-      <p>Leading Bangladesh's Power Sector with Excellence and Innovation.</p>
+      <p>Powering Progress, Ensuring Reliability.</p>
       
       <div class="hero-btns">
-        <a href="#services" class="btn-primary">Our Services</a>
+        <a href="#service" class="btn-primary">Our Services</a>
         <a href="#contact" class="btn-outline">Get in Touch</a>
       </div>
     </div>
@@ -52,7 +58,14 @@
       <div class="overview-text">
         <h2 class="section-tag">About Us</h2>
         <h1>Reliable Partner for <span>Power Solutions</span></h1>
-        <p>Established in 2022, OMSS Limited has quickly evolved into a trusted partner for independent power producers (IPPs) and government utilities in Bangladesh.</p>
+        <p>
+    Established in 2022, <strong>OMSS Limited</strong> specializes in Operation, Maintenance, Service, and Supply (O&MSS) for Bangladesh's power sector. 
+    We ensure that critical infrastructure—from turbines to auxiliary systems—operates with maximum efficiency and reliability.
+  </p>
+  <p>
+    With a dedicated team of <strong>150+ professionals</strong>, we bridge the gap between global technology and local energy needs, 
+    powering progress for the nation's future.
+  </p>
         <div class="stats">
             <div class="stat-item"><strong>24/7</strong> Support</div>
             <div class="stat-item"><strong>ISO</strong> Certified</div>
@@ -103,10 +116,16 @@
         
       </div>
       <div class="vm-card mission">
-        <div class="vm-icon">🎯</div>
-        <h3>Our Mission</h3>
-        <p>Deliver excellence in power plant operations through safety, reliability, and innovation.</p>
-      </div>
+  <div class="vm-icon">🎯</div>
+  <h3>Our Mission</h3>
+  <p>To deliver excellence in power plant O&M through safety, reliability, and efficiency, while embracing innovation and sustainability[cite: 14, 16, 22].</p>
+  
+  <ul class="mission-list" style="text-align: left; list-style: none; padding: 0; margin-top: 15px; font-size: 0.9rem; color: #64748b;">
+    <li style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #F7941D; margin-right: 8px;"></i> <strong>Reliability:</strong> Minimizing downtime and maximizing output.</li>
+    <li style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #F7941D; margin-right: 8px;"></i> <strong>Innovation:</strong> Implementing predictive maintenance and remote monitoring.</li>
+    <li style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #F7941D; margin-right: 8px;"></i> <strong>Responsibility:</strong> Commitment to HSE and local talent development.</li>
+  </ul>
+</div>
     </div>
   </div>
 </section>
@@ -155,39 +174,308 @@
     </div>
   </div>
 </section>
-<section id="coreBusiness" class="core-business">
+<section id="growth" class="growth-section">
   <div class="container">
     <div class="section-header-center">
-        <h1>Core Business Areas</h1>
-        <p>Comprehensive solutions for the power industry</p>
-        <hr class="gradient-hr">
+      <span class="badge-dark">Our Journey</span>
+      <h1>Financial Highlights & <span>Growth</span></h1>
+      <p>Reflecting consistent expansion in revenue, workforce, and project excellence since 2022.</p>
+      <hr class="gradient-hr">
     </div>
-    <div class="objective-grid">
-      <div class="obj-card">
-        <div class="obj-img"><img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=500" alt="Operation"></div>
-        <div class="obj-content">
-            <h3>Operation of Power Plants</h3>
-            <p>Efficient and reliable plant operations ensuring uninterrupted supply.</p>
+
+    <div class="growth-content-wrapper">
+      <div class="growth-text" [@fadeUp]>
+        <h3>Sustainable Trajectory</h3>
+        <p>
+          Since our founding in 2022, OMSS Limited has experienced consistent growth[cite: 14]. Our trajectory shows <strong>double-digit growth annually</strong>, demonstrating our resilience in a competitive market.
+        </p>
+        <p>
+          This performance has enabled us to reinvest in manpower, training, and technology, evolving from small-scale plants to large <strong>combined-cycle facilities</strong>[cite: 16, 17].
+        </p>
+        
+        <div class="growth-indicators">
+          <div class="indicator-item">
+            <div class="label">Annual Revenue Growth <span>+15%</span></div>
+            <div class="progress-bar"><div class="fill" style="width: 85%;"></div></div>
+          </div>
+          <div class="indicator-item">
+            <div class="label">Project Portfolio <span>85+ Projects</span></div>
+            <div class="progress-bar"><div class="fill" style="width: 75%;"></div></div>
+          </div>
+          <div class="indicator-item">
+            <div class="label">Workforce Expansion <span>150+ Experts</span></div>
+            <div class="progress-bar"><div class="fill" style="width: 90%;"></div></div>
+          </div>
         </div>
       </div>
-      <div class="obj-card">
-        <div class="obj-img"><img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=500" alt="Maintenance"></div>
-        <div class="obj-content">
-            <h3>Strategic Maintenance</h3>
-            <p>Minimizing downtime through preventive & corrective planning.</p>
+
+      <div class="growth-visual-card" [@fadeUp]>
+        <div class="visual-header">
+          <i class="fas fa-chart-line"></i>
+          <h4>Growth Metrics</h4>
         </div>
-      </div>
-      <div class="obj-card">
-        <div class="obj-img"><img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=500" alt="Overhaul"></div>
-        <div class="obj-content">
-            <h3>Equipment Overhauling</h3>
-            <p>Precision turbine and equipment overhaul with global standards.</p>
+        <div class="stat-boxes">
+          <div class="stat-box">
+            <span class="value">2022</span>
+            <span class="desc">Founded [cite: 14]</span>
+          </div>
+          <div class="stat-box accent">
+            <span class="value">100%</span>
+            <span class="desc">Client Retention </span>
+          </div>
+          <div class="stat-box">
+            <span class="value">Double</span>
+            <span class="desc">Digit Growth </span>
+          </div>
+        </div>
+        <div class="impact-quote">
+          "Our growth is measured by the positive impact on Bangladesh’s economic progress."
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<section id="coreBusiness" class="core-business">
+  <div class="container">
+    <div class="section-header-center">
+        <span class="badge-dark">Our Pillars</span>
+        <h1>Core Business <span>Areas</span></h1>
+        <p>Defining value through the backbone of our operations in the energy sector.</p>
+        <hr class="gradient-hr">
+    </div>
+    
+    <div class="objective-grid">
+      <div class="obj-card" [@fadeUp]>
+        <div class="obj-img"><img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=500" alt="Operation"></div>
+        <div class="obj-content">
+            <h3>Operation of Power Plants</h3>
+            <p>Managing day-to-day operations of simple and combined-cycle plants, ensuring optimum performance and fuel efficiency.</p>
+        </div>
+      </div>
+
+      <div class="obj-card" [@fadeUp]>
+        <div class="obj-img"><img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=500" alt="Maintenance"></div>
+        <div class="obj-content">
+            <h3>Preventive & Corrective Maintenance</h3>
+            <p>Performing scheduled and unscheduled activities on turbines and BOP equipment using condition monitoring and fault diagnostics.</p>
+        </div>
+      </div>
+
+      <div class="obj-card" [@fadeUp]>
+        <div class="obj-img"><img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=500" alt="Overhaul"></div>
+        <div class="obj-content">
+            <h3>Equipment Overhauling</h3>
+            <p>Specializing in major overhauls of turbines and compressors using precision engineering to extend equipment lifespan.</p>
+        </div>
+      </div>
+
+      <div class="obj-card" [@fadeUp]>
+        <div class="obj-img"><img src="https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Consultancy"></div>
+        <div class="obj-content">
+            <h3>Supply & Technical Consultancy</h3>
+            <p>Ensuring timely availability of genuine spare parts through global OEM networks and guiding clients in energy efficiency.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="service" class="services-detailed">
+  <div class="container">
+    <div class="section-header-center">
+      <span class="badge-dark">Comprehensive Solutions</span>
+      <h1>Our Professional <span>Services</span></h1>
+      <p>OMSS provides a one-stop solution for modern power generation facilities, combining expertise with advanced resources.</p>
+      <hr class="gradient-hr">
+    </div>
+
+    <div class="resources-banner">
+      <h3>Key Support Resources</h3>
+      <div class="resource-grid">
+        <div class="res-item"><i class="fas fa-tools"></i> Equipment Resources </div>
+        <div class="res-item"><i class="fas fa-microscope"></i> Testing Resources [cite: 17, 19]</div>
+        <div class="res-item"><i class="fas fa-wave-square"></i> Vibration Team </div>
+        <div class="res-item"><i class="fas fa-industry"></i> Rebuilding Workshop </div>
+      </div>
+    </div>
+
+    <div class="services-grid-main">
+      <div class="service-long-card" [@fadeUp]>
+        <div class="srv-icon"><i class="fas fa-file-contract"></i></div>
+        <div class="srv-info">
+          <h3>Operation & Maintenance Contracts</h3>
+          <p>Full responsibility for power plant operations, ensuring consistent performance and safety compliance[cite: 16, 22].</p>
+        </div>
+      </div>
+
+      <div class="service-long-card" [@fadeUp]>
+        <div class="srv-icon"><i class="fas fa-calendar-check"></i></div>
+        <div class="srv-info">
+          <h3>Preventive Maintenance Programs</h3>
+          <p>Scheduled interventions to prevent costly breakdowns and extend equipment life.</p>
+        </div>
+      </div>
+
+      <div class="service-long-card" [@fadeUp]>
+        <div class="srv-icon"><i class="fas fa-clock"></i></div>
+        <div class="srv-info">
+          <h3>Shutdown & Turnaround Support</h3>
+          <p>Efficient management of planned outages for safe and timely equipment restoration.</p>
+        </div>
+      </div>
+
+      <div class="service-long-card" [@fadeUp]>
+        <div class="srv-icon"><i class="fas fa-users-cog"></i></div>
+        <div class="srv-info">
+          <h3>Manpower Outsourcing & Training</h3>
+          <p>Providing 150+ skilled engineers and customized training for client teams[cite: 20, 21].</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="org-structure" class="org-section">
+  <div class="container">
+    <div class="section-header-center">
+      <span class="badge-dark">Our Backbone</span>
+      <h1>Organizational <span>Structure</span></h1>
+      <p>Strategically distributed workforce across operations, maintenance, and corporate support.</p>
+      <hr class="gradient-hr">
+    </div>
+
+    <div class="org-chart-container" [@fadeUp]>
+      <div class="top-management-node">Top Management </div>
+      <div class="connector-vertical"></div>
+      <div class="department-row">
+        <div class="dept-node">Finance </div>
+        <div class="dept-node">Marketing </div>
+        <div class="dept-node accent">Engineering </div>
+        <div class="dept-node">HR & Admin </div>
+        <div class="dept-node">Procurement </div>
+      </div>
+      <div class="connector-vertical"></div>
+      <div class="sub-section-row">
+        <div class="sub-node">Safety & Compliance </div>
+        <div class="sub-node">Servicing & Overhauling </div>
+        <div class="sub-node">O&M </div>
+        <div class="sub-node">Store Section </div>
+        <div class="sub-node">Renewable Energy </div>
+      </div>
+    </div>
+
+    <div class="manpower-resources-grid">
+      <div class="hr-list-card" [@fadeUp]>
+        <h3><i class="fas fa-users"></i> Human Resources</h3>
+        <p>A team of over 150 skilled engineers, technicians, and project managers.</p>
+        <div class="hr-categories">
+  <span><i class="fas fa-cogs"></i> Mechanical & Electrical Experts</span>
+  <span><i class="fas fa-fire"></i> ARC, TIG, MIG Welders</span>
+  <span><i class="fas fa-fan"></i> Turbine & Pump Specialists</span>
+  <span><i class="fas fa-hard-hat"></i> Certified Riggers & Scaffolders</span>
+  <span><i class="fas fa-bolt"></i> Power Plant Operation Teams</span>
+  <span><i class="fas fa-wrench"></i> Precision Millwright Fitters</span>
+  <span><i class="fas fa-drafting-table"></i> Fabricators & Pipe Fitters</span>
+  <span><i class="fas fa-truck-pickup"></i> Heavy Equipment Operators</span>
+</div>
+      </div>
+
+      <div class="tech-resource-card" [@fadeUp]>
+        <h3><i class="fas fa-microchip"></i> Modern Tools & Systems</h3>
+        <p>Investment in specialized equipment to support maintenance and overhauling.</p>
+        <ul class="resource-list">
+          <li><i class="fas fa-bolt"></i> Vibration Analyzers & Borescopes </li>
+          <li><i class="fas fa-crosshairs"></i> Laser Alignment & Balancing Tools </li>
+          <li><i class="fas fa-truck-loading"></i> Heavy Deployment Logistics </li>
+          <li><i class="fas fa-handshake"></i> Strong Partnerships with Global OEMs </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="hse-policy" class="hse-section">
+  <div class="container">
+    <div class="section-header-center">
+      <span class="badge-dark">Safety First</span>
+      <h1>Quality Assurance & <span>HSE Policy</span></h1>
+      <p>Ensuring operational excellence through rigorous safety protocols and environmental stewardship.</p>
+      <hr class="gradient-hr">
+    </div>
+
+    <div class="hse-grid">
+      <div class="hse-card" [@fadeUp]>
+        <div class="hse-icon-box">
+          <i class="fas fa-certificate"></i>
+        </div>
+        <h3>Quality Assurance (QA/QC)</h3>
+        <p>Following ISO-certified processes to ensure services meet international standards through rigorous inspections and testing.</p>
+        <ul class="hse-list">
+          <li><i class="fas fa-check"></i> International Standards</li>
+          <li><i class="fas fa-check"></i> Rigorous Documentation</li>
+          <li><i class="fas fa-check"></i> Client Satisfaction</li>
+        </ul>
+      </div>
+
+      <div class="hse-card accent-card" [@fadeUp]>
+        <div class="hse-icon-box">
+          <i class="fas fa-hard-hat"></i>
+        </div>
+        <h3>Health & Safety</h3>
+        <p>Creating a zero-accident workplace through safety protocols, emergency response training, and regular audits.</p>
+        <ul class="hse-list">
+          <li><i class="fas fa-check"></i><p> Zero-Accident Culture</p></li>
+          <li><i class="fas fa-check"></i><p> Regular Safety Drills </p> </li>
+          <li><i class="fas fa-check"></i><p>Risk Management </p> </li>
+        </ul>
+      </div>
+
+      <div class="hse-card" [@fadeUp]>
+        <div class="hse-icon-box">
+          <i class="fas fa-leaf"></i>
+        </div>
+        <h3>Environmental Care</h3>
+        <p>Committed to minimizing impact by following sustainable practices, reducing emissions, and responsible waste management.</p>
+        <ul class="hse-list">
+          <li><i class="fas fa-check"></i> Sustainable Practices</li>
+          <li><i class="fas fa-check"></i> Emission Reduction</li>
+          <li><i class="fas fa-check"></i> Waste Management</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="partner" class="gallery-section">
+  <div class="container">
+    <div class="section-header-center">
+      <h1>Strategic <span>Partnerships</span></h1>
+      <p>We collaborate with industry leaders to deliver excellence and innovation. Our partners share our commitment to quality and help us provide the best solutions for our clients.</p>
+      <hr class="gradient-hr">
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item" [@fadeUp]>
+        <img src="assets/imagecompany/imagesmastir.png" alt="Power Plant Maintenance">
+        <div class="gallery-overlay">
+          <span>MASTIR ENERJI TESISLERI MONTAJ</span>
+        </div>
+      </div>
+      
+      <div class="gallery-item" [@fadeUp]>
+        <img src="assets/imagecompany/waterwell.jpeg" alt="Engineering Team">
+        <div class="gallery-overlay">
+          <span>WATER WELL  ENGINEERING</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" [@fadeUp]>
+        <img src="assets/imagecompany/MESDN.jpeg" alt="Control Room">
+        <div class="gallery-overlay">
+          <span>WIRE M&E SDN BHD</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <section id="gallery" class="gallery-section">
   <div class="container">
     <div class="section-header-center">
@@ -266,39 +554,46 @@
     </div>
   </div>
 </section>
-<section id="partner" class="gallery-section">
+<section id="md-message" class="md-message-section">
   <div class="container">
-    <div class="section-header-center">
-      <h1>Strategic <span>Partnerships</span></h1>
-      <p>We collaborate with industry leaders to deliver excellence and innovation. Our partners share our commitment to quality and help us provide the best solutions for our clients.</p>
-      <hr class="gradient-hr">
-    </div>
-
-    <div class="gallery-grid">
-      <div class="gallery-item" [@fadeUp]>
-        <img src="assets/imagecompany/imagesmastir.png" alt="Power Plant Maintenance">
-        <div class="gallery-overlay">
-          <span>MASTIR</span>
+    <div class="md-card">
+      <div class="md-image-box">
+        <img src="assets/imagecompany/managingdirector.png" alt="Managing Director">
+        <div class="md-info-tag">
+          <h3>Managing Director</h3>
+          <span>OMSS Limited</span>
         </div>
       </div>
       
-      <div class="gallery-item" [@fadeUp]>
-        <img src="assets/imagecompany/waterwell.jpeg" alt="Engineering Team">
-        <div class="gallery-overlay">
-          <span>WaterWell Engineering</span>
+      <div class="md-content">
+        <i class="fas fa-quote-left quote-icon"></i>
+        <h2 class="section-tag">Message from Managing Director</h2>
+        <h1>Powering the Future with <span>Vision & Commitment</span></h1>
+        
+        <div class="message-text">
+          <p>
+            It gives me great pleasure to present the profile of <strong>OMSS Limited</strong>, a company built from a strong vision and a commitment to service excellence. [cite: 10]
+          </p>
+          <p>
+            Since our establishment in 2022, our goal has been to become the most reliable partner in the operation and maintenance of power plants in Bangladesh. [cite: 14] Today, I am proud to say we have taken significant strides toward that goal. [cite: 15]
+          </p>
+          <p>
+            Our success is the result of a dedicated workforce of <strong>150+ professionals</strong>, who are not only technically competent but also deeply motivated by the impact their work creates. [cite: 20]
+          </p>
+          <p class="highlight-text">
+            "Together, we aim to power Bangladesh’s energy future through innovation and the highest standards of safety." [cite: 21, 22]
+          </p>
         </div>
-      </div>
-
-      <div class="gallery-item" [@fadeUp]>
-        <img src="assets/imagecompany/MESDN.jpeg" alt="Control Room">
-        <div class="gallery-overlay">
-          <span>wira M&E SDN Bhd</span>
+        
+        <div class="md-signature">
+            <img src="assets/imagecompany/managingdirector.png" alt="Signature">
+            <!-- <h4>Md Shah Neoaj Kabir</h4> -->
+            <span>Managing Director, OMSS LTD</span>
         </div>
       </div>
     </div>
   </div>
 </section>
-
 <section id="contact" class="contact-us">
   <div class="container">
     <div class="contact-card-premium">
@@ -316,15 +611,15 @@
             </div>
           </a>
 
-          <a href="tel:+8801742987866" class="method-item">
+          <a href="tel:+8801713022635" class="method-item">
             <div class="icon-box"><i class="fas fa-phone-alt"></i></div>
             <div class="method-details">
               <span>Call Anytime</span>
-              <strong>+880 1742 987 866</strong>
+              <strong>+880 1713 022 635</strong>
             </div>
           </a>
           
-          <a href="tel:+8801913749618" class="method-item">
+          <!-- <a href="tel:+8801913749618" class="method-item">
             <div class="icon-box"><i class="fas fa-phone-alt"></i></div>
             <div class="method-details">
               <span>Call Anytime</span>
@@ -337,7 +632,7 @@
               <span>Call Anytime</span>
               <strong>++880 1731 663 745</strong>
             </div>
-          </a>
+          </a> -->
           
         </div>
       </div>
@@ -348,8 +643,8 @@
         <div class="method-item" style="text-align: left; margin-bottom: 20px;">
           <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
           <div class="method-details">
-            <span style="display: block; font-size: 0.9rem; opacity: 0.8;">Bangladesh Office</span>
-            <strong style="display: block; font-size: 1rem;">House # 50, Road # 10 North Bashabo, <br> Sabujbag Dhaka- 1214</strong>
+            <span style="display: block; font-size: 0.9rem; opacity: 0.8;">Corporate  Office</span>
+            <strong style="display: block; font-size: 1rem;"> Fahima Tower/M H Tower 1st Floor. 42,43, <br> Purana Paltan, dhaka</strong>
           </div>
         </div>
 
@@ -367,7 +662,7 @@
         <div class="social-links-premium">
           <a href="#" class="social-circle"><i class="fab fa-linkedin-in"></i></a>
           <a href="#" class="social-circle"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://wa.me/8801742987866" class="social-circle"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://wa.me/8801713022635" class="social-circle"><i class="fab fa-whatsapp"></i></a>
         </div>
         <a href="mailto:info@omssbd.com" class="btn-primary-glow">Send Inquiry Now</a>
       </div>
@@ -375,7 +670,7 @@
   </div>
 </section>
 
-<a href="https://wa.me/8801742987866" target="_blank" class="whatsapp">
+<a href="https://wa.me/8801713022635" target="_blank" class="whatsapp">
     <i class="fab fa-whatsapp"></i>
 </a>
 
