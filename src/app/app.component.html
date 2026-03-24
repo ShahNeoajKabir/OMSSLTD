@@ -21,12 +21,13 @@
     <a href="#award" (click)="setActive('award'); closeMenu()" [class.active-link]="activeSection==='award'">Awards</a>
     <a href="#growth" (click)="setActive('growth'); closeMenu()" [class.active-link]="activeSection==='growth'">Financial Growth</a>
     <a href="#coreBusiness" (click)="setActive('coreBusiness'); closeMenu()" [class.active-link]="activeSection==='coreBusiness'">Core Business</a>
+    <a href="#projects" (click)="setActive('projects'); closeMenu()" [class.active-link]="activeSection==='projects'">Project</a>
     <a href="#service" (click)="setActive('service'); closeMenu()" [class.active-link]="activeSection==='service'">Services</a>
     <a href="#org-structure" (click)="setActive('org-structure'); closeMenu()" [class.active-link]="activeSection==='org-structure'">Org.Structure </a>
     <a href="#partner" (click)="setActive('partner'); closeMenu()" [class.active-link]="activeSection==='partner'">Partner</a>
     <a href="#gallery" (click)="setActive('gallery'); closeMenu()" [class.active-link]="activeSection==='gallery'">Gallery</a>
 
-    <a href="assets/pdfbrochure/Brochure.pdf" 
+    <a href="assets/pdfbrochure/Brochure.pdf"
    download="OMSS_Limited_Brochure" (click)="setActive('brochure'); closeMenu()" [class.active-link]="activeSection==='brochure'">Brochure</a>
     <a href="#contact" (click)="setActive('contact'); closeMenu()" [class.active-link]="activeSection==='contact'" class="nav-btn">Contact Us</a>
   </nav>
@@ -43,7 +44,7 @@
       <span class="badge">Your Trusted Engineering Partner</span>
       <h1>Operational <br> Maintenance <span>Service & Solutions</span></h1>
       <p>Powering Progress, Ensuring Reliability.</p>
-      
+
       <div class="hero-btns">
         <a href="#service" class="btn-primary">Our Services</a>
         <a href="#contact" class="btn-outline">Get in Touch</a>
@@ -59,11 +60,11 @@
         <h2 class="section-tag">About Us</h2>
         <h1>Reliable Partner for <span>Power Solutions</span></h1>
         <p>
-    Established in 2022, <strong>OMSS Limited</strong> specializes in Operation, Maintenance, Service, and Supply (O&MSS) for Bangladesh's power sector. 
+    Established in 2022, <strong>OMSS Limited</strong> specializes in Operation, Maintenance, Service, and Supply (O&MSS) for Bangladesh's power sector.
     We ensure that critical infrastructure—from turbines to auxiliary systems—operates with maximum efficiency and reliability.
   </p>
   <p>
-    With a dedicated team of <strong>150+ professionals</strong>, we bridge the gap between global technology and local energy needs, 
+    With a dedicated team of <strong>150+ professionals</strong>, we bridge the gap between global technology and local energy needs,
     powering progress for the nation's future.
   </p>
         <div class="stats">
@@ -113,13 +114,13 @@
         <div class="vm-icon">🌍</div>
         <h3>Our Vision</h3>
         <p>To be the most trusted partner in the power generation services sector in Bangladesh and expand regionally.</p>
-        
+
       </div>
       <div class="vm-card mission">
   <div class="vm-icon">🎯</div>
   <h3>Our Mission</h3>
   <p>To deliver excellence in power plant O&M through safety, reliability, and efficiency, while embracing innovation and sustainability.</p>
-  
+
   <ul class="mission-list" style="text-align: left; list-style: none; padding: 0; margin-top: 15px; font-size: 0.9rem; color: #64748b;">
     <li style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #F7941D; margin-right: 8px;"></i> <strong>Reliability:</strong> Minimizing downtime and maximizing output.</li>
     <li style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #F7941D; margin-right: 8px;"></i> <strong>Innovation:</strong> Implementing predictive maintenance and remote monitoring.</li>
@@ -137,7 +138,7 @@
       <p>Our commitment to safety and quality has earned us industry-leading accolades.</p>
       <hr class="gradient-hr">
     </div>
-    
+
     <div class="awards-premium-grid">
       <div class="award-premium-card">
         <div class="award-icon">
@@ -192,7 +193,7 @@
         <p>
           This performance has enabled us to reinvest in manpower, training, and technology, evolving from small-scale plants to large <strong>combined-cycle facilities</strong>.
         </p>
-        
+
         <div class="growth-indicators">
           <div class="indicator-item">
             <div class="label">Annual Revenue Growth <span>+15%</span></div>
@@ -244,7 +245,7 @@
         <p>Defining value through the backbone of our operations in the energy sector.</p>
         <hr class="gradient-hr">
     </div>
-    
+
     <div class="objective-grid">
       <div class="obj-card" [@fadeUp]>
         <div class="obj-img"><img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=500" alt="Operation"></div>
@@ -280,6 +281,109 @@
     </div>
   </div>
 </section>
+
+<section id="projects" class="projects-section">
+  <div class="container">
+    <div class="section-header-center">
+      <span class="badge-dark">Current Operations</span>
+      <h1>Ongoing <span>Projects</span></h1>
+      <p>Delivering precision engineering and maintenance services at major power hubs across Bangladesh.</p>
+      <hr class="gradient-hr">
+    </div>
+
+    <div class="projects-grid">
+      <div class="project-card" [@fadeUp]>
+        <div class="project-status-tag">Ongoing</div>
+        <div class="project-header">
+          <i class="fas fa-tools"></i>
+          <h3>Cooling Water Pump (CWP) Dismantling & Repair</h3>
+        </div>
+
+        <div class="project-details">
+          <div class="detail-item">
+            <strong><i class="fas fa-industry"></i> Plant:</strong>
+            <span>Bibiyana-3 400 MW CCPP</span>
+          </div>
+          <div class="detail-item">
+            <strong><i class="fas fa-map-marker-alt"></i> Location:</strong>
+            <span>Habiganj, Bangladesh</span>
+          </div>
+          <div class="detail-item">
+            <strong><i class="fas fa-cogs"></i> GT Model:</strong>
+            <span>M701F4 – Mitsubishi Heavy Industries (MHI)</span>
+          </div>
+          <div class="detail-item">
+            <strong><i class="fas fa-cogs"></i> Equipment:</strong>
+            <span>Equipment	Cooling Water Pump (CWP)</span>
+          </div>
+          <div class="detail-item">
+            <strong><i class="fas fa-cogs"></i> Work Type:</strong>
+            <span>Mechanical Maintenance & Repair</span>
+          </div>
+        </div>
+
+        <div class="project-scope">
+          <h4>Scope of Work:</h4>
+          <ul>
+            <li>Internal inspection & part replacement</li>
+            <li>Mechanical seal & bearing inspection</li>
+            <li>Shaft alignment & performance testing</li>
+          </ul>
+        </div>
+
+        <div class="project-overview">
+          <p>Ensuring reliable cooling water circulation through expert dismantling and precision reassembly for continuous power generation.</p>
+        </div>
+      </div>
+
+      <div class="project-card" [@fadeUp]>
+        <div class="project-status-tag">Ongoing</div>
+        <div class="project-header">
+          <i class="fas fa-wind"></i>
+          <h3>Inlet Guide Vane (IGV) System Repair & Calibration</h3>
+        </div>
+
+        <div class="project-details">
+          <div class="detail-item">
+            <strong><i class="fas fa-industry"></i> Plant:</strong>
+            <span>Bibiyana-3 400 MW CCPP</span>
+          </div>
+          <div class="detail-item">
+            <strong><i class="fas fa-map-marker-alt"></i> Location:</strong>
+            <span>Habiganj, Bangladesh</span>
+          </div>
+          <div class="detail-item">
+            <strong><i class="fas fa-cogs"></i> GT Model:</strong>
+            <span>M701F4 – Mitsubishi Heavy Industries (MHI)</span>
+          </div>
+          <div class="detail-item">
+            <strong><i class="fas fa-cogs"></i> Equipment:</strong>
+            <span>Equipment	Inlet Guide Vane (IGV) System</span>
+          </div>
+          <div class="detail-item">
+            <strong><i class="fas fa-cogs"></i> Work Type:</strong>
+            <span>Mechanical Maintenance & Turbine Auxiliary System Support</span>
+          </div>
+        </div>
+
+        <div class="project-scope">
+          <h4>Scope of Work:</h4>
+          <ul>
+            <li>Actuator inspection & linkage adjustment</li>
+            <li>Vane alignment & precision calibration</li>
+            <li>Functional testing & performance verification</li>
+          </ul>
+        </div>
+
+        <div class="project-overview">
+          <p>Conducting vital maintenance on turbine auxiliary systems to ensure optimal airflow control and maximum turbine efficiency.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <section id="service" class="services-detailed">
   <div class="container">
     <div class="section-header-center">
@@ -459,7 +563,7 @@
           <span>MASTIR ENERJI TESISLERI MONTAJ</span>
         </div>
       </div>
-      
+
       <div class="gallery-item" [@fadeUp]>
         <img src="assets/imagecompany/waterwell.jpeg" alt="Engineering Team">
         <div class="gallery-overlay">
@@ -498,7 +602,7 @@
           <span>Turbine Overhaul</span>
         </div>
       </div>
-      
+
       <div class="gallery-item" [@fadeUp]>
         <img src="assets/imagecompany/3.jpeg" alt="Engineering Team">
         <div class="gallery-overlay">
@@ -564,12 +668,12 @@
           <span>OMSS Limited</span>
         </div>
       </div>
-      
+
       <div class="md-content">
         <i class="fas fa-quote-left quote-icon"></i>
         <h2 class="section-tag">Message from Managing Director</h2>
         <h1>Powering the Future with <span>Vision & Commitment</span></h1>
-        
+
         <div class="message-text">
           <p>
             It gives me great pleasure to present the profile of <strong>OMSS Limited</strong>, a company built from a strong vision and a commitment to service excellence.
@@ -584,7 +688,7 @@
             "Together, we aim to power Bangladesh’s energy future through innovation and the highest standards of safety."
           </p>
         </div>
-        
+
         <div class="md-signature">
             <img src="assets/imagecompany/managingdirector.png" alt="Signature">
             <!-- <h4>Md Shah Neoaj Kabir</h4> -->
@@ -601,7 +705,7 @@
         <span class="badge">Get In Touch</span>
         <h1>Ready to power up <br> <span>your project?</span></h1>
         <p>Whether it's a routine checkup or an emergency overhaul, our expert engineers are standing by 24/7.</p>
-        
+
         <div class="contact-methods">
           <a href="mailto:info@omssbd.com" class="method-item">
             <div class="icon-box"><i class="fas fa-envelope"></i></div>
@@ -618,7 +722,7 @@
               <strong>+880 1713 022 635</strong>
             </div>
           </a>
-          
+
           <!-- <a href="tel:+8801913749618" class="method-item">
             <div class="icon-box"><i class="fas fa-phone-alt"></i></div>
             <div class="method-details">
@@ -633,13 +737,13 @@
               <strong>++880 1731 663 745</strong>
             </div>
           </a> -->
-          
+
         </div>
       </div>
 
       <div class="contact-action-box">
         <h3>Our Offices</h3>
-        
+
         <div class="method-item" style="text-align: left; margin-bottom: 20px;">
           <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
           <div class="method-details">
@@ -657,7 +761,7 @@
         </div> -->
 
         <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin-bottom: 20px;">
-        
+
         <p>Stay updated with our latest projects and safety achievements.</p>
         <div class="social-links-premium">
           <a href="#" class="social-circle"><i class="fab fa-linkedin-in"></i></a>
